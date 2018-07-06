@@ -1,0 +1,20 @@
+.weather {
+    padding: 24px;
+    background: #40a7e7;
+}
+
+.date_list_li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid rgb(56, 148, 228);
+}
+
+.note {
+
+}
+
+.note_li {
+    padding: 8px;
+    border-bottom: 1px solid #FFF;
+}

@@ -1,0 +1,16 @@
+<view class="weather"> 
+  <view class="date_list">
+    <view class='date_list_li' wx:for='{{cityDates.results[0].weather_data}}' wx:key='{{index}}' wx:if='{{index != 0}}'>
+      <view>{{item.date}}</view>
+      <image style="width: 24px;height:24px;" src='{{item.dayPictureUrl}}'></image>
+      <view>{{item.temperature}}</view>
+    </view>
+  </view>
+
+  <view class="note">
+    <view class="note_li" wx:for='{{cityDates.results[0].index}}'>
+      <view class="note_title">{{item.tipt}}  {{item.zs}}</view>
+      <view class="note_desc">{{item.des}}</view>
+    </view>
+  </view>
+</view>
