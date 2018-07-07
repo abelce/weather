@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+    let that = this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,9 +33,19 @@ App({
         }
       }
     })
+
+    wx.getSystemInfo({
+      success: (res) => {
+        that.globalData.systemInfo = res;
+      }
+    }) 
   },
   globalData: {
     userInfo: null,
-    ak: `GfyiBoolKtoBUXOdIibIDrAhBVOTy2GW`
-  }
+    ak: `GfyiBoolKtoBUXOdIibIDrAhBVOTy2GW`,
+    systemInfo: {}
+  },
+  setGeocoderUrl (address) {
+    return `https://api.map.baidu.com/geocoder/v2/?address=${address}&output=json&ak=${this.globalData.ak}`
+  },
 })

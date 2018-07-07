@@ -1,0 +1,20 @@
+<!--pages/citychoose/citychoose.wxml-->
+<view class='citychoose'>
+  <view class='search'>
+    <view class='wrapper'>
+      <image src='/img/search_grey.png'></image>
+      <input type='text' placeholder-class='placeholder-class' placeholder='查询其他城市' value='{{inputText}}' maxlength='20' confirm-type='search' bindconfirm='inputFilter'/>
+      <text catchtap='cancel'>清空</text>
+    </view>
+  </view>
+  <view class="city-list">
+    <view wx:for='{{showItems}}' wx:key='{{index}}'>
+      <view class='key'>{{index}}</view>
+      <view class='values'>
+        <view class='value' wx:for='{{item}}' catchtap='choose' data-item='{{item}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='empty' wx:if='{{!alternative}}'>没有其他的城市了</view>
+</view>
+

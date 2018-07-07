@@ -1,0 +1,44 @@
+/* pages/citychoose/citychoose.wxss */
+.citychoose {
+  font-size: 30rpx;
+}
+.search {
+    padding: 48rpx;
+    font-size: 32rpx;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1rpx solid;
+}
+.wrapper image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 16rpx;
+}
+.wrapper input {
+  flex: 1;
+}
+.placeholder-class {
+    font-size: 32rpx;
+}
+
+.city-list {
+
+}
+.key {
+  background: #f2f2f2;
+  padding-left: 24rpx;
+}
+.values .value {
+  border-bottom: 1rpx solid #efefef;
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.empty {
+  padding: 24rpx;
+}

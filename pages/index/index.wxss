@@ -1,20 +1,84 @@
 .weather {
-    padding: 24px;
     background: #40a7e7;
+    color: #FFF;
+    font-size: 28rpx;
 }
-
+.info {
+   padding: 24rpx;
+}
+.currentCity {
+    text-align: center;
+    font-size: 32rpx;
+}
+.temperature {
+    font-size: 64px;
+    margin: 24rpx 0;
+    text-align: center;
+}
+.date_list {
+    padding: 24rpx;
+}
 .date_list_li {
     display: flex;
     justify-content: space-between;
-    padding: 4px 0;
-    border-bottom: 1px solid rgb(56, 148, 228);
+    align-items: center;
+    padding: 8rpx 0;
+    border-bottom: 2rpx solid rgb(56, 148, 228);
 }
-
 .note {
-
+    padding: 24rpx;
+}
+.note_li {
+    padding: 8rpx;
+    border-bottom: 2rpx solid #FFF;
+    display: flex;
+    align-items: center;
+    padding: 12rpx 0;
 }
 
-.note_li {
-    padding: 8px;
-    border-bottom: 1px solid #FFF;
+.icon {
+    width: 80rpx;
+    height: 80rpx;
+    padding: 0 24rpx;
+}
+
+.right {
+    flex: 1;
+}
+
+.note_title {
+    margin-bottom: 18rpx;
+}
+.detail {
+    text-align: center;
+    font-size: 32rpx;
+}
+.search {
+    padding: 48rpx;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1rpx solid #FFF;
+}
+.wrapper image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 16rpx;
+}
+.placeholder-class {
+    color: #fff;
+}
+.menus .menu {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  z-index: 100;
+  bottom: 150rpx;
+  right: 70rpx;
+  opacity: 0;
+}
+.menus .main {
+  opacity: 1;
 }

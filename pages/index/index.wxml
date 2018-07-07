@@ -1,16 +1,48 @@
 <view class="weather"> 
-  <view class="date_list">
-    <view class='date_list_li' wx:for='{{cityDates.results[0].weather_data}}' wx:key='{{index}}' wx:if='{{index != 0}}'>
-      <view>{{item.date}}</view>
-      <image style="width: 24px;height:24px;" src='{{item.dayPictureUrl}}'></image>
-      <view>{{item.temperature}}</view>
+  <view>
+    <view class='search'>
+      <view class='wrapper'>
+        <image src='/img/search.png'></image>
+        <input type='text' placeholder-class='placeholder-class' placeholder='查询其他城市' value='{{cityDates.searchText}}' maxlength='20' confirm-type='search' bindconfirm='commitSearch'/>
+      </view>
     </view>
-  </view>
+    <view class="info">
+      <view class="currentCity">
+        <view>{{cityDates.currentCity || '定位中'}}</view>
+      </view>
+      <view class="temperature">{{cityDates.temperature}}<text style='font-size: 90rpx;'>°</text></view>
+      <view class="detail">
+        <view class="weatherDesc">{{cityDates.weatherDesc}}</view>
+        <view class="">{{cityDates.results[0].weather_data[0].temperature}}</view>
+        <view class="">空气{{cityDates.airCondition}}</view>
+      </view>
+    </view>
+      
+    
+    <view class="date_list">
+      <view class='date_list_li' wx:for='{{cityDates.results[0].weather_data}}' wx:key='{{index}}' wx:if='{{index != 0}}'>
+        <view>{{item.date}}</view>
+        <image style="width: 24px;height:24px;" src='{{item.dayPictureUrl}}'></image>
+        <view>{{item.temperature}}</view>
+      </view>
+    </view>
 
-  <view class="note">
-    <view class="note_li" wx:for='{{cityDates.results[0].index}}'>
-      <view class="note_title">{{item.tipt}}  {{item.zs}}</view>
-      <view class="note_desc">{{item.des}}</view>
+    <view class="note">
+      <view class="note_li" wx:for='{{cityDates.results[0].index}}' wx:key='{{index}}'>
+        <image class="icon" src='{{icons[index]}}'></image>
+        <view class="right">
+          <view class="note_title">{{item.tipt}}  {{item.zs}}</view>
+          <view class="note_desc">{{item.des}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 悬浮菜单 -->
+    <view class='menus'>
+      <image src="/img/location.png" animation="{{animationOne}}" class="menu" bindtap="menuOne"  style='top:{{pos.top}}px;left:{{pos.left}}px;'></image>
+      <image src="/img/setting.png" animation="{{animationTwo}}" class="menu" bindtap="menuTwo"  style='top:{{pos.top}}px;left:{{pos.left}}px;'></image>
+      <image src="/img/info.png" animation="{{animationThree}}" class="menu" bindtap="menuThree"  style='top:{{pos.top}}px;left:{{pos.left}}px;'></image>
+      <image src="/img/menu.png" animation="{{animationMain}}" class="menu main" bindtap="menuMain" bindtouchstart='menuTouchStart' catchtouchmove='menuMainMove' style='top:{{pos.top}}px;left:{{pos.left}}px;'></image>
     </view>
   </view>
 </view>
